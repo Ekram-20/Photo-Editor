@@ -1,0 +1,30 @@
+* {
+    text-align: center;
+    align-items: center;
+}
+
+body {
+    margin: auto;
+    width: 50%;
+    background-image: url('/static/background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#img-preview {
+    margin: 20px 0px;
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+
+button {
+    /* display: block; */
+    margin: 12px 0;
+}
+
+#upload-btn {
+    color: transparent;
+    width: 50%;
+    overflow: hidden;
+    background-color: green;
+}
