@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/main.css">
+    <link rel="icon" type="image/x-icon" href="/static/edit-image-icon.svg">
+    <title>Image Editor</title>
+</head>
+
+<body>
+
+    <img src="/static/ECV-logo.png" alt="" id="evc-logo" width="100px">
+    <h1 id="title">Edit your Image</h1>
+
+    <main>
+        <form id="image-form" method="POST" enctype="multipart/form-data">
+
+            <button id="blur" name="operation" value="blur">Blur</button>
+            <button id="resize" name="operation" value="resize">Resize</button>
+            <button id="flip" name="operation" value="flip">Flip</button>
+            <button id="border" name="operation" value="border">Border</button>
+            <button id="gray" name="operation" value="gray">Gray</button>
+
+            <img src="{{ image_path }}" alt="Image Preview" id="preview">
+            
+            <input id="input-image" type="file" name="image" accept="image/*" required onchange="displayImage(event)">
+            <label id="input-image-label" for="input-image">Upload Image</label>
+
+        </form>
+    </main>
+
+
+    <script>
+        var displayImage = function (event) {
+            var image = document.getElementById('preview');
+            image.src = URL.createObjectURL(event.target.files[0]);    
+        };
+
+
+    </script>
+</body>
+
+</html>
